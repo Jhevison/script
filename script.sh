@@ -9,12 +9,12 @@ i*86) pegar="i386"
 ;;
 x86_64) pegar= "amd64"
 ;;
-*) echo "arquitetura desconhecida"
+*) echo "arquitetura desconhecida/Unknown architecture"
 ;;
 esac
 pkg install debootstrap proot wget
 clear
-echo "Baixando Debian 9"
+echo "Baixando Debian 9/Downloading Debian 9"
 echo ""
 echo ""
 debootstrap --arch=$pegar stretch debian http://ftp.de.debian.org/debian
@@ -27,5 +27,5 @@ echo "unset LD_PRELOAD
 proot -0 -r ~/debian -b /dev/ -b /sys/ -b /proc/ -b /data/data/com.termux/files/home /usr/bin/env -i HOME=/root TERM="xterm-256color" PS1='[root@stable \W]$ ' PATH=/bin:/usr/bin:/sbin:/usr/sbin:/bin /bin/bash --login" >> start.sh
 
 clear
-echo "Rode o ./start.sh para iniciar o Debian (run the ./start.sh to run the Debian)"
+echo "Rode o ./start.sh para iniciar o Debian (run the ./start.sh to start the Debian)"
 
